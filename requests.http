@@ -6,3 +6,15 @@ Content-Type: application/json
     "subject": "Test Email",
     "body": "This is a test email."
 }
+
+### Health Check
+GET http://localhost:8080/actuator/health
+
+### Metrics
+GET http://localhost:8080/actuator/metrics
+
+### Get memory metrics
+GET http://localhost:8080/actuator/metrics/jvm.memory.used
+
+### Get prometheus metrics
+GET http://localhost:8080/actuator/prometheus
