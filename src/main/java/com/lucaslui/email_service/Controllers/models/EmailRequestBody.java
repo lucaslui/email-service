@@ -11,8 +11,8 @@ public class EmailRequestBody {
     @NotEmpty(message = "The email address is required.")
     @Email(message = "The email address is invalid.", flags = { Flag.CASE_INSENSITIVE })
     private String to;
-    @NotEmpty
+    @NotEmpty(message = "The email subject is required.")
     private String subject;
-    @NotEmpty
+    @NotEmpty(message = "The email body is required.")
     private String body;
 }
