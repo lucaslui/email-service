@@ -21,6 +21,7 @@ public class EmailService {
 
     public EmailModel sendEmail(EmailModel email) {
 
+        email.setStatus(EmailStatus.PENDING);
         try {
             emailProvider.sendEmail(email);
             email.setStatus(EmailStatus.SENT);
