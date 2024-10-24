@@ -1,4 +1,4 @@
-<h1 align="center"> 📭 Simple Email Service  </h1>
+<h1 align="center"> 📭 Simple Email Service 📭 </h1>
 
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/lucaslui/email-service">
@@ -24,7 +24,9 @@
 
 <h2 id="overview"> 💻 Overview </h2>
 
-The Simple Email Service is responsible for sending emails of notification. The application was developed to be used in a microservices environment, being capable of sending emails asynchronously and scalable. 
+The Simple Email Service is designed for sending notification emails in a microservices environment via Simple Mail Transfer Protocol (SMTP). 
+
+It supports synchronous and asynchronous email delivery and is built with scalability in mind, ensuring reliable performance even under heavy loads.
 
 The service is also integrated with a database, which is responsible for storing the email history.
 
@@ -32,8 +34,9 @@ The service is also integrated with a database, which is responsible for storing
 
 The email service has the following features:
 
-- [✔] Send emails
-- [⨯] List email history
+- [✔] Send synchronous emails 
+- [⨯] Send asynchronous emails coming from Kafka
+- [⨯] List email history (with email status, content, date, and recipient)
 
 <h2 id="technologies"> 🧰 Technologies </h2>
 
@@ -51,29 +54,35 @@ Before you begin, you will need to have the following tools installed on your ma
 
   - Java == 23.0
   - Maven == 4.0.0
-  - Docker >= 23.0.1
+  - Docker >= 25.0.5 (with docker-compose)
 
-I would like recommends that you have installed the SDKman to management Java and Maven versions. To install SDKman, run the following commands:
+I recommend installing [SDKMAN](https://sdkman.io/) to manage Java and Maven versions efficiently. 
+
+To install SDKMAN, run the following commands:
     
 ```bash
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
 
-In addition, you will need to set the following environment variables in your .env file:
-
-```bash
-EMAIL_PROVIDER_HOST=
-EMAIL_PROVIDER_PORT=
-EMAIL_PROVIDER_USERNAME=
-EMAIL_PROVIDER_PASSWORD=
-
-MONGO_DB_URI=
-```
-
 <h2 id="install"> 🏗️ Install </h2>
 
-To install via command line:
+First you must clone the code and go to the project root directory.
+
+```bash
+# Clone this repository
+$ git clone https://github.com/lucaslui/email-service.git
+
+# Go into the repository
+$ cd email-service
+```
+In the following steps, for greater convenience, it is recommended to use an IDE with support for **Java** and **Spring**, for example, with **VSCode** you can use and install extensions such as:
+
+- [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+
+- [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack)
+
+Even so, if you want to try installing via command line, run:
 
 ```bash
 # Clone this repository
@@ -96,6 +105,17 @@ docker compose up
 
 # Executando localmente
 ./mvnw spring-boot:run
+```
+
+Additionally, you'll need to set the following environment variables in your .env file:
+
+```bash
+EMAIL_PROVIDER_HOST=
+EMAIL_PROVIDER_PORT=
+EMAIL_PROVIDER_USERNAME=
+EMAIL_PROVIDER_PASSWORD=
+
+MONGO_DB_URI=
 ```
 
 <h2 id="author"> 👤 Author </h2>
