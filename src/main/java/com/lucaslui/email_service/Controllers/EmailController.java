@@ -1,5 +1,7 @@
 package com.lucaslui.email_service.Controllers;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +15,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 @RestController
 @RequestMapping("/emails")
@@ -28,5 +32,11 @@ public class EmailController {
         EmailModel emailSaved = this.emailService.sendEmail(email);
         return emailSaved;
     }
+
+    @GetMapping
+    public List<EmailModel> listEmails() {
+        return this.emailService.listEmails();
+    }
+    
 
 }

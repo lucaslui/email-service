@@ -1,3 +1,4 @@
+### Send synchronous email
 POST http://localhost:8080/emails
 Content-Type: application/json
 
@@ -6,6 +7,10 @@ Content-Type: application/json
     "subject": "Test Email",
     "body": "This is a test email."
 }
+
+### Get email history
+GET http://localhost:8080/emails
+
 
 ### Health Check
 GET http://localhost:8080/actuator/health

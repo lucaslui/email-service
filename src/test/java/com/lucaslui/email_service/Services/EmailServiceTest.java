@@ -66,4 +66,16 @@ public class EmailServiceTest {
             assert email.getUpdatedAt() != null;
         }
     }
+
+    @Nested
+    @DisplayName("listEmails")
+    class ListEmailsTests {
+
+        @Test
+        @DisplayName("should return a list of emails")
+        public void shouldReturnAListOfEmails() {
+            emailService.listEmails();
+            verify(emailRepository, times(1)).findAll();
+        }
+    }
 }

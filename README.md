@@ -36,7 +36,7 @@ The email service has the following features:
 
 - [✔] Send synchronous emails 
 - [⨯] Send asynchronous emails coming from Kafka
-- [⨯] List email history (with email status, content, date, and recipient)
+- [✔] List email history (with email status, content, date, and recipient)
 
 <h2 id="technologies"> 🧰 Technologies </h2>
 

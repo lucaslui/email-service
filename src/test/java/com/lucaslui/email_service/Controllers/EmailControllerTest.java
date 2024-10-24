@@ -71,4 +71,16 @@ public class EmailControllerTest {
             assertEquals(body.getBody(), capturedEmailModel.getBody());
         }
     }
+
+    @Nested
+    @DisplayName("listEmails")
+    class ListEmailsTests {
+
+        @Test
+        @DisplayName("should return a list of EmailModel")
+        public void shouldReturnAListOfEmailModel() {
+            emailController.listEmails();
+            verify(emailService).listEmails();
+        }
+    }
 }
