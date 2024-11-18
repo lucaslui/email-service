@@ -130,7 +130,7 @@ http://localhost:8080/docs
 
 Exist some common problems that you may encounter when installing the application:
 
-- **MongoDB not connected**: If you encounter this problem, you forgot run the mongo db database through command docker compose up.
+- **MongoDB not connected**: If you encounter this problem, you may have forgotten to run the MongoDB database using the command docker-compose up.
 
 - **SMTP server not connected**: If you encounter this problem, you forgot to set the environment variables for the SMTP server.
 
