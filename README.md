@@ -99,7 +99,7 @@ $ ./mvnw clean install
 
 <h2 id="run"> 🚀 Run </h2>
 
-You'll need to set the following environment variables in your .env file:
+You'll need to set the following environment variables in your `.env` file:
 
 ```bash
 EMAIL_PROVIDER_HOST=
@@ -125,6 +125,18 @@ After running the application, you can access the Swagger documentation at the f
 ```bash
 http://localhost:8080/docs
 ```
+
+<h2 id="troubleshoot"> 💉 Troubleshoot </h2>
+
+Exist some common problems that you may encounter when installing the application:
+
+- **MongoDB not connected**: If you encounter this problem, you forgot run the mongo db database through command docker compose up.
+
+- **SMTP server not connected**: If you encounter this problem, you forgot to set the environment variables for the SMTP server.
+
+- **Main Class not found**: If you encounter this problem, you forgot to setting the java application through your IDE.
+
+- **Can Not Compile/Install**: If you encounter this problem, it is possible that the application cannot be installed through CLI commands due to the use of Lombok.
 
 <h2 id="author"> 👤 Author </h2>
 
