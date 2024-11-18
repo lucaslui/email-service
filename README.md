@@ -52,16 +52,18 @@ The following technologies were used in the construction of the project:
 
 Before you begin, you will need to have the following tools installed on your machine:
 
-  - Java == 23.0
-  - Maven == 4.0.0
+  - Java >= 23.0
+  - Maven >= 4.0.0
   - Docker >= 25.0.5 (with docker-compose)
 
-I recommend installing [SDKMAN](https://sdkman.io/) to manage Java and Maven versions efficiently. 
+I strongly recommend installing [SDKMAN](https://sdkman.io/) to manage Java and Maven versions efficiently. 
 
 To install SDKMAN, run the following commands:
     
 ```bash
+# Download SDKMAN script
 curl -s "https://get.sdkman.io" | bash
+# Install SDKMAN through the script
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
 
@@ -97,17 +99,7 @@ $ ./mvnw clean install
 
 <h2 id="run"> 🚀 Run </h2>
 
-It is possible to run locally with:
-
-```sh
-# MongoDB start container
-docker compose up
-
-# Executando localmente
-./mvnw spring-boot:run
-```
-
-Additionally, you'll need to set the following environment variables in your .env file:
+You'll need to set the following environment variables in your .env file:
 
 ```bash
 EMAIL_PROVIDER_HOST=
@@ -116,6 +108,22 @@ EMAIL_PROVIDER_USERNAME=
 EMAIL_PROVIDER_PASSWORD=
 
 MONGO_DB_URI=
+```
+
+It is possible to run locally with:
+
+```sh
+# MongoDB start container
+docker compose up
+
+# Run the application
+./mvnw spring-boot:run
+```
+
+After running the application, you can access the Swagger documentation at the following address:
+
+```bash
+http://localhost:8080/docs
 ```
 
 <h2 id="author"> 👤 Author </h2>
