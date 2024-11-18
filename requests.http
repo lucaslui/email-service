@@ -3,7 +3,7 @@ POST http://localhost:8080/emails
 Content-Type: application/json
 
 {
-    "to": "lucasluimotta@hotmail.com",
+    "to": "<any_email_address>",
     "subject": "Test Email",
     "body": "This is a test email."
 }
